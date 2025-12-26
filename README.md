@@ -11,21 +11,21 @@
 
 ```mermaid
 flowchart LR
-  A[雙工業相機取像] --> B[相機內參/去畸變]
-  B --> C[棋盤格偵測 -> Homography H(img->world)]
-  B --> D[背景差分定位車體 ROI]
-  D --> E[HSV 擷取紅色標記點 (車體參考點)]
-  C --> F[像素->世界座標 pix2world]
+  A["雙工業相機取像"] --> B["相機內參/去畸變"]
+  B --> C["棋盤格偵測 → Homography H(img→world)"]
+  B --> D["背景差分定位車體 ROI"]
+  D --> E["HSV 擷取紅色標記點（車體參考點）"]
+  C --> F["像素 → 世界座標（pix2world）"]
   E --> F
-  G[路徑影像 snapshot] --> H[背景/路徑差分 + 形態學 + skeleton]
-  H --> I[單一路徑 or 多路徑參考點序列]
-  I --> J[multiPaths.yml (world座標)]
-  F --> K[車體位置 (C x,y)]
-  I --> L[目標參考點 (G x,y)]
-  L --> M[UART: "Gx,yCcx,cy"]
+  G["路徑影像 snapshot"] --> H["背景/路徑差分 + 形態學 + skeleton"]
+  H --> I["單一路徑 or 多路徑參考點序列"]
+  I --> J["multiPaths.yml（world 座標）"]
+  F --> K["車體位置（C x,y）"]
+  I --> L["目標參考點（G x,y）"]
+  L --> M["UART: Gx,yCcx,cy"]
   K --> M
-  M --> N[STM32: Heading 對準 -> Tracking 追蹤]
-  N --> O[到點回報/更新下一個參考點]
+  M --> N["STM32：Heading 對準 → Tracking 追蹤"]
+  N --> O["到點回報/更新下一個參考點"]
 ```
 
 ---
