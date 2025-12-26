@@ -229,7 +229,7 @@ sscanf(line,"G%f,%fC%f,%f",&gx,&gy,&cx,&cy)
 
 ### STM32F103
 - STM32 Standard Peripheral Library（程式 include `stm32f10x.h`）
-- 專案需包含你的外設模組：encoder/usart/clock/gpio 等
+- 專案需包含你自定義的外設模組：encoder/usart/clock/gpio 等
 
 ---
 
