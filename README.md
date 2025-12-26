@@ -30,7 +30,7 @@ flowchart LR
 
 ---
 
-## 專案檔案（本次提供程式）
+## 專案檔案
 
 ### STM32F103（控制/韌體核心）
 - `main.c`  
@@ -48,7 +48,7 @@ flowchart LR
 - `MotorDrive.c / MotorDrive.h`  
   - PWM 輸出與方向控制（實際上 `type.c` 也包含了 `driveMotor()`，兩者可能是不同版本/備份）
 
-> ⚠️ 專案中還引用了其他 MCU 端檔案（如 `encoder.h`, `usart_3.h`, `clock.h` 等），此 README 以你提供的核心檔案為主做整合說明。
+> ⚠️ 專案中還引用了其他 MCU 端檔案（如 `encoder.h`, `usart_3.h`, `clock.h` 等），此 README 以核心檔案為主做整合說明。
 
 ### Linux（視覺定位 / 路徑萃取 / 串流）
 - `defRefPtStreamV3.cpp`（主程式）
@@ -80,8 +80,8 @@ Linux 端會組合字串傳給 MCU（見 `defRefPtStreamV3.cpp`）：
   - `G0.30,0.15C0.12,0.08`
 
 其中：
-- `Gx,y`：目前要追蹤的 **參考點**（world 座標，公尺）
-- `Cx,y`：視覺估測到的 **車體位置**（world 座標，公尺）
+- `Gx,y`：目前要追蹤的 **參考點**（參考座標系，公尺）
+- `Cx,y`：視覺估測到的 **車體位置**（參考座標系，公尺）
 
 STM32 端在 `main.c` 以：
 ```c
