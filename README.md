@@ -280,3 +280,11 @@ sudo usermod -aG dialout $USER
 - OpenCV 社群
 - 工業相機 SDK 供應商
 - 以及你的論文/實驗場域資源支持
+
+---
+
+## Demo 影片
+- https://youtu.be/nDM2E7in8aY
+- https://youtu.be/bM0EBoQPbV8
+- https://youtu.be/uH9IZEmn1SI
+- https://youtu.be/QQhi4oTn_p0
